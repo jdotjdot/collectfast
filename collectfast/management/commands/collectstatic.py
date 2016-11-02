@@ -77,7 +77,7 @@ class Command(collectstatic.Command):
         return self.cache_key_prefix + path_hash
 
     def get_storage_lookup(self, path):
-        return self.storage.bucket.lookup(path)
+        return self.storage.bucket.get_key(path)
 
     def get_lookup(self, path):
         """Get lookup from local dict, cache or S3 — in that order"""
